@@ -1,5 +1,4 @@
 # Fetch base images
-ARG version
 FROM alpine:latest
 
 # Set environment variables
