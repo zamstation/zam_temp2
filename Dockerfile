@@ -22,6 +22,7 @@ USER dev
 RUN mkdir -p ${WS}
 RUN cd ${WS}
 COPY --chown=dev entrypoint.sh entrypoint.sh
+RUN chmod +x entrypoint.sh
 RUN ls -ltr entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
