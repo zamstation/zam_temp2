@@ -1,3 +1,5 @@
+name: Build
+
 on: [push]
 
 jobs:
@@ -5,6 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      - name: Docker Test
-        using: docker
-        image: Dockerfile
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world action step
+        id: hello
+        uses: .github/workflows/actions/dockeraction
+        with:
+          who-to-greet: 'Zamstation'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"

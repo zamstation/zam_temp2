@@ -20,3 +20,7 @@ ENV WS="${HOME}/workspace"
 # Create basic directories
 USER dev
 RUN mkdir -p ${WS}
+RUN cd ${WS}
+COPY entrypoint.sh entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
