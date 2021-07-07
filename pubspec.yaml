@@ -2,6 +2,7 @@ name: zam_bmi_calculator
 description: BMI Calculator App
 version: 0.0.1
 homepage: https://zamstation.com
+repository: https://github.com/zamstation/zam_temp2
 publish_to: "none"
 
 environment:
