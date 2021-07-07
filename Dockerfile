@@ -21,6 +21,7 @@ ENV WS="${HOME}/workspace"
 USER dev
 RUN mkdir -p ${WS}
 RUN cd ${WS}
-COPY entrypoint.sh entrypoint.sh
+COPY --chown=dev entrypoint.sh entrypoint.sh
+RUN ls -ltr entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
