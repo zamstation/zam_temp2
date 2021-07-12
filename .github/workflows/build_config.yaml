@@ -6,7 +6,9 @@ jobs:
   test_docker:
     name: Test Docker
     runs-on: ubuntu-latest
-    container: zamstation/flutter
+    container:
+      image: zamstation/flutter
+      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v2
