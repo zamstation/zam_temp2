@@ -1,0 +1,14 @@
+name: Build
+
+on: [push]
+
+jobs:
+  test_docker:
+    name: Test Docker
+    runs-on: ubuntu-latest
+    container: zamstation/flutter
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: flutter doctor
+        run: flutter doctor
